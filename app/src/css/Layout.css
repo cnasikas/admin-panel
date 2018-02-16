@@ -1,0 +1,15 @@
+.bg-transparent {
+  opacity: 0;
+  display: none;
+  background-color: #e5e5e5;
+  position: fixed;
+  z-index: 1000;
+  transition: opacity .218s ease-in;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-transparent.active{
+  opacity: 0.75;
+  display: block;
+}

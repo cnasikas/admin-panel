@@ -1,0 +1,57 @@
+#app-bar{
+  box-shadow: none;
+  z-index: 999;
+}
+
+.app-bar-title{
+  flex: 1;
+}
+
+.drawer > .MuiDrawer-paperAnchorLeft-86{
+  width: 250px;
+  background-color: #e8e8e8;
+  bottom: 0;
+  color: #000;
+  height: -moz-calc(100vh - 100%);
+  height: calc(100vh - 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  top: 100%;
+  z-index: 990;
+  will-change: visibility;
+  visibility: visible;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  border: 0 !important;
+}
+
+.drawer-wrapper{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.drawer-wrapper .drawer-menu-wrapper{
+  flex: 1 0 auto;
+}
+
+.left-toolbar,
+.right-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.left-toolbar{
+  flex: 1 0 auto;
+}
+
+.right-toolbar{
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+.header-info > *{
+  margin: 0 16px;
+}

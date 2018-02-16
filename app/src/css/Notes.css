@@ -1,0 +1,82 @@
+.notes-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.notes{
+  min-width: 600px;
+  width: 60%;
+}
+
+.note-wrapper{
+  margin: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.note-wrapper.edit-note{
+  display: none;
+  margin: 0;
+  padding: 16px;
+  position: fixed;
+  z-index: 1001;
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  top: 85px;
+  cursor: text;
+}
+
+.note-wrapper.edit-note .note-actions {
+  opacity: 1;
+}
+
+.note-wrapper.edit-note.active{
+  display: block;
+}
+
+.note-wrapper:hover .note{
+  box-shadow: 0 0 0 0 transparent,0 0 0 0 transparent,0 2px 15px rgba(0,0,0,0.30);
+}
+
+.note-wrapper:hover .note-actions{
+  opacity: 1;
+}
+
+.note{
+  overflow: hidden;
+  position: relative;
+  transition-duration: .218s;
+  transition-property: background,opacity,box-shadow,transform;
+  transition-timing-function: ease-in;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
+}
+
+.note-content-wrapper{
+  position: relative;
+  overflow: hidden;
+  min-height: 60px;
+  transition: max-height .218s ease-in;
+}
+
+.note-content{
+  font-size: 14px;
+  line-height: 19px;
+  min-height: 46px;
+  padding: 12px 15px 15px 15px;
+  white-space: pre-line;
+}
+
+.note-actions {
+  opacity: 0;
+  padding: 4px 0;
+  transition-duration: .218s;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+}
+
+.note-actions button{
+  width: 32px;
+  height: 32px;
+  margin: 0 8px;
+}

@@ -1,0 +1,36 @@
+body {
+  background-color: #e8e8e8;
+  color: rgba(0,0,0,.87);
+  direction: ltr;
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: 15px;
+  margin: 0;
+  min-width: 360px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.app-main {
+  padding: 85px 85px 15px 280px;
+}
+
+.flex-grow{
+  flex: 1 1 auto;
+}
+
+.add-btn{
+  bottom: 0;
+  margin-bottom: 24px;
+  margin-right: 24px;
+  position: fixed;
+  right: 0;
+}
+
+.dialog-input, .dialog-textarea{
+  width: 100%
+}
+
+button.active{
+  color: #00C853
+}
