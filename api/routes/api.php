@@ -29,3 +29,7 @@ Route::resource('projects.credentials', 'ProjectsCredentialsController', array('
 /* Notes */
 
 Route::resource('notes', 'NotesController', array('except' => array('create', 'edit')));
+
+/* Contacts */
+
+Route::resource('contacts', 'ContactController', array('except' => array('create', 'edit')));
