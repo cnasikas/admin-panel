@@ -73,7 +73,9 @@ class NotesController extends BaseController {
 
 	public function destroy($id)
 	{
-		$this->note->find($id)->delete();
+    $note = $this->note->find($id);
+    $note->delete();
+    return $note;
 	}
 
 
