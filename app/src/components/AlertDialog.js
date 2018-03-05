@@ -10,7 +10,7 @@ import Dialog, {
 export default class AlertDialog extends React.Component {
   render () {
     return (
-      <Dialog open={this.props.open} onRequestClose={this.handleRequestClose}>
+      <Dialog open={this.props.open} onClose={this.handleRequestClose}>
         <DialogTitle>{this.props.title}</DialogTitle>
         <DialogContent>
           <DialogContentText>
