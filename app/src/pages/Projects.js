@@ -4,7 +4,16 @@ import { connect } from 'react-redux'
 import Projects from '../components/Projects'
 import AddButton from '../components/AddButton'
 import NewProject from '../components/NewProject'
+import newDialog from '../components/NewDialogHOC'
 import { addProject } from '../actions/ActionCreators'
+
+const data = {title: '',
+  url: '',
+  notes: '',
+  completed: false
+}
+
+const NewProjectDialog = newDialog(NewProject, data)
 
 class ProjectsPage extends React.Component {
   constructor (props) {
@@ -37,7 +46,7 @@ class ProjectsPage extends React.Component {
       <div>
         <Projects />
         <AddButton clickHandler={this.openProjectDialog} />
-        <NewProject open={this.state.newPrDialog} handleCancel={this.closeProjectDialog} handleSubmit={this.addProject} />
+        <NewProjectDialog open={this.state.newPrDialog} handleCancel={this.closeProjectDialog} handleSubmit={this.addProject} />
       </div>
     )
   }
