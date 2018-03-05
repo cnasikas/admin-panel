@@ -37,6 +37,10 @@ class ContactController extends Controller
           'first_name' => 'required|max:100',
           'email' => 'email',
         ]);
+
+        $this->contact->fill($request->all())->save();
+
+        return $this->contact;
     }
 
     /**
