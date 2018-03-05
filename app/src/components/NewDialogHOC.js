@@ -65,7 +65,7 @@ export default function newDialog (FormComponent, data) {
           <DialogTitle>Create Contact</DialogTitle>
           <form noValidate autoComplete='off' onSubmit={this.submit} ref='test' method='post'>
             <DialogContent>
-              <FormComponent handleInputChange={this.handleInputChange} {...this.state} />
+              <FormComponent handleInputChange={this.handleInputChange} {...this.state} maskInput={this.maskInput} />
             </DialogContent>
             <DialogActions>
               <Button onClick={this.props.handleCancel} color='primary'>
