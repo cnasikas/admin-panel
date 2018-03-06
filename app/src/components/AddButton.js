@@ -8,11 +8,11 @@ export default class AddButton extends React.Component {
     let addBtn = null
 
     if (this.props.link) {
-      addBtn = <Button component={Link} variant='fab' color='primary' aria-label='add' to={this.props.to}>
+      addBtn = <Button component={Link} variant='fab' color='secondary' aria-label='add' to={this.props.to}>
         <AddIcon />
       </Button>
     } else {
-      addBtn = <Button variant='fab' color='primary' aria-label='add' onClick={this.props.clickHandler}>
+      addBtn = <Button variant='fab' color='secondary' aria-label='add' onClick={this.props.clickHandler}>
         <AddIcon />
       </Button>
     }

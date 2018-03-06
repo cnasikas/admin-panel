@@ -68,10 +68,10 @@ export default function newDialog (FormComponent, data) {
               <FormComponent handleInputChange={this.handleInputChange} {...this.state} maskInput={this.maskInput} />
             </DialogContent>
             <DialogActions>
-              <Button onClick={this.props.handleCancel} color='primary'>
+              <Button onClick={this.props.handleCancel} color='secondary'>
                 Cancel
               </Button>
-              <Button color='primary' type='submit'>
+              <Button color='secondary' type='submit'>
                 Save
               </Button>
             </DialogActions>
