@@ -1,11 +1,10 @@
 import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import Projects from '../components/Projects'
-import AddButton from '../components/AddButton'
 import NewProject from '../components/NewProject'
+import Project from '../components/Project'
 import newDialog from '../components/NewDialogHOC'
-import { addProject } from '../actions/ActionCreators'
+import newList from '../components/ListHOC'
+import newListPage from '../components/ListPageHOC'
+import { addProject, getProjects, deleteProject } from '../actions/ActionCreators'
 
 const data = {title: '',
   url: '',
@@ -14,46 +13,13 @@ const data = {title: '',
 }
 
 const NewProjectDialog = newDialog(NewProject, data)
+const Projects = newList(Project, 'projects', {getList: getProjects, deleteItem: deleteProject}, {title: 'Delete Project', content: 'Are you sure you want to delete project?'})
+const ProjectsListPage = newListPage(Projects, NewProjectDialog, {addItem: addProject})
 
-class ProjectsPage extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {newPrDialog: false}
-
-    this.openProjectDialog = this.openProjectDialog.bind(this)
-    this.closeProjectDialog = this.closeProjectDialog.bind(this)
-    this.addProject = this.addProject.bind(this)
-  }
-
-  openProjectDialog () {
-    this.setState(prevState => ({
-      newPrDialog: true
-    }))
-  }
-
-  closeProjectDialog () {
-    this.setState(prevState => ({
-      newPrDialog: false
-    }))
-  }
-
-  addProject (project) {
-    this.props.actions.addProject(project).then((value) => { this.closeProjectDialog() })
-  }
-
+export default class ProjectsPage extends React.Component {
   render () {
     return (
-      <div>
-        <Projects />
-        <AddButton clickHandler={this.openProjectDialog} />
-        <NewProjectDialog open={this.state.newPrDialog} handleCancel={this.closeProjectDialog} handleSubmit={this.addProject} />
-      </div>
+      <ProjectsListPage />
     )
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ addProject }, dispatch)
-})
-
-export default connect(null, mapDispatchToProps)(ProjectsPage)
