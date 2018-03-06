@@ -3,6 +3,7 @@ import moment from 'moment'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import classnames from 'classnames'
+import { withTheme } from 'material-ui/styles'
 
 import { getProject, getCredentials, getPayments, updateProject, updatePayment,
   updateCredential, addCredential, addPayment, deletePayment, deleteCredential
@@ -196,7 +197,7 @@ class ProjectDetails extends React.Component {
             <div className='project-header'>
               <CardHeader
                 avatar={
-                  <Avatar aria-label={this.props.project.title}>
+                  <Avatar aria-label={this.props.project.title}  style={{backgroundColor: this.props.theme.palette.secondary.main}}>
                     {this.props.project.title.charAt(0)}
                   </Avatar>
               }
@@ -265,4 +266,4 @@ const mapStateToProps = state => ({
   credentials: state.credentials
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectDetails)
+export default connect(mapStateToProps, mapDispatchToProps)(withTheme()(ProjectDetails))
