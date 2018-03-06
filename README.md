@@ -130,6 +130,7 @@ yarn start
 ## To-do List
 
 - [ ] User Authentication
+- [ ] Change to repository design pattern
 - [ ] Refact ProjectDetails.js Web App Component
 - [ ] Add new Note
 - [ ] Partners
