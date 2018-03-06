@@ -31,11 +31,11 @@ export default class Menu extends React.Component {
                 </ListItemIcon>
                 <ListItemText primary='Projects' />
               </ListItem>
-              <ListItem button>
+              <ListItem button to='/contacts' component={Link}>
                 <ListItemIcon>
                   <PeopleIcon />
                 </ListItemIcon>
-                <ListItemText primary='Partners' />
+                <ListItemText primary='Contacts' />
               </ListItem>
             </List>
             <Divider />
