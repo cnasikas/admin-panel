@@ -15,7 +15,12 @@ import {
   GET_NOTES,
   UPDATE_NOTE,
   EDIT_NOTE,
-  CLOSE_NOTE
+  CLOSE_NOTE,
+  GET_CONTACTS,
+  GET_CONTACT,
+  ADD_CONTACT,
+  UPDATE_CONTACT,
+  DELETE_CONTACT
 } from './ActionTypes'
 
 export function getProjects () {
@@ -211,4 +216,66 @@ export function editNote (note = {}) {
 
 export function closeNote (note = {}) {
   return {payload: note, type: CLOSE_NOTE}
+}
+
+export function getContacts () {
+  return {
+    payload: {
+      request: {
+        method: 'get',
+        url: '/contacts'
+      }
+    },
+    type: GET_CONTACTS
+  }
+}
+
+export function getContact (id) {
+  return {
+    payload: {
+      request: {
+        method: 'get',
+        url: '/contacts/' + id
+      }
+    },
+    type: GET_CONTACT
+  }
+}
+
+export function addContact (contact) {
+  return {
+    payload: {
+      request: {
+        method: 'post',
+        url: '/contacts',
+        data: {...contact}
+      }
+    },
+    type: ADD_CONTACT
+  }
+}
+
+export function updateContact (id, contact) {
+  return {
+    payload: {
+      request: {
+        method: 'put',
+        url: '/contacts/' + id,
+        data: {...contact}
+      }
+    },
+    type: UPDATE_CONTACT
+  }
+}
+
+export function deleteContact (id) {
+  return {
+    payload: {
+      request: {
+        method: 'delete',
+        url: '/contacts/' + id
+      }
+    },
+    type: DELETE_CONTACT
+  }
 }
