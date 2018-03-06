@@ -1,0 +1,11 @@
+.new-contact .new-contact-list-icon {
+  width: 40px;
+}
+
+.new-contact .dialog-input {
+  margin-right: 20px;
+}
+
+.new-contact .dialog-input:last-child {
+  margin-right: 0;
+}
