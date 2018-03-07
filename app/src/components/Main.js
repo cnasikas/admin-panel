@@ -14,7 +14,7 @@ export default class Main extends React.Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/project' component={ProjectsPage} />
           <Route exact path='/project/:id' component={ProjectDetails} />
-          <Route exact path='/contacts' component={ContactsPage} />
+          <Route exact path='/contact' component={ContactsPage} />
         </Switch>
       </main>
     )

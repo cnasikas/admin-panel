@@ -31,7 +31,7 @@ export default class Menu extends React.Component {
                 </ListItemIcon>
                 <ListItemText primary='Projects' />
               </ListItem>
-              <ListItem button to='/contacts' component={Link}>
+              <ListItem button to='/contact' component={Link}>
                 <ListItemIcon>
                   <PeopleIcon />
                 </ListItemIcon>
