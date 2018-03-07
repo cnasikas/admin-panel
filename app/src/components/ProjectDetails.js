@@ -39,6 +39,8 @@ import List, {
   ListItemText
 } from 'material-ui/List'
 
+import {isNumber} from '../lib/util.js'
+
 class ProjectDetails extends React.Component {
   constructor (props) {
     super(props)
@@ -63,7 +65,7 @@ class ProjectDetails extends React.Component {
   }
 
   componentDidMount () {
-    let id = this.isNumber(this.props.match.params.id) ? this.props.match.params.id : 1
+    let id = isNumber(this.props.match.params.id) ? this.props.match.params.id : 1
     this.props.actions.getProject(id).catch(e => console.log(e))
     this.props.actions.getCredentials(id).catch(e => console.log(e))
     this.props.actions.getPayments(id).catch(e => console.log(e))
@@ -85,10 +87,6 @@ class ProjectDetails extends React.Component {
 
   add (action = 'addCredential', obj = {}) {
     this.props.actions[action](obj, this.props.project.id).catch(e => console.log(e))
-  }
-
-  isNumber (n) {
-    return !isNaN(parseFloat(n)) && isFinite(n)
   }
 
   hasPayments () {
@@ -200,7 +198,7 @@ class ProjectDetails extends React.Component {
                   <Avatar aria-label={this.props.project.title}  style={{backgroundColor: this.props.theme.palette.secondary.main}}>
                     {this.props.project.title.charAt(0)}
                   </Avatar>
-              }
+                }
                 title={this.props.project.title}
                 subheader={this.props.project.url}
                 className='project-header-info'
