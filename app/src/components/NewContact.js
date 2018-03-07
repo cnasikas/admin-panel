@@ -8,6 +8,8 @@ import NoteIcon from 'material-ui-icons/Note'
 import BusinessIcon from 'material-ui-icons/Business'
 import PersonIcon from 'material-ui-icons/Person'
 import Avatar from 'material-ui/Avatar'
+import LinkIcon from 'material-ui-icons/Link'
+import LocationOnIcon from 'material-ui-icons/LocationOn'
 
 export default class NewContact extends React.Component {
   render () {
@@ -93,6 +95,36 @@ export default class NewContact extends React.Component {
             onChange={this.props.handleInputChange}
             inputProps={{
               'aria-label': 'Phone'
+            }}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon className='new-contact-list-icon'>
+            <LocationOnIcon />
+          </ListItemIcon>
+          <TextField
+            value={this.props.address}
+            name='address'
+            placeholder='Address'
+            className='dialog-input'
+            onChange={this.props.handleInputChange}
+            inputProps={{
+              'aria-label': 'Address'
+            }}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon className='new-contact-list-icon'>
+            <LinkIcon />
+          </ListItemIcon>
+          <TextField
+            value={this.props.website}
+            name='website'
+            placeholder='Website'
+            className='dialog-input'
+            onChange={this.props.handleInputChange}
+            inputProps={{
+              'aria-label': 'Website'
             }}
           />
         </ListItem>
