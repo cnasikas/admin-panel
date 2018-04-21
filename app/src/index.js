@@ -15,7 +15,7 @@ import App from './App'
 import './index.css'
 
 const client = axios.create({
-  baseURL: 'http://localhost/admin.dev/api/public/',
+  baseURL: '/api',
   responseType: 'json'
 })
 
